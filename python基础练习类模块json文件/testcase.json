@@ -1,0 +1,30 @@
+[
+    {
+        "name": "获取用户列表",
+        "method": "GET",
+        "path": "/users",
+        "expected_status": 200,
+        "max_response_time": 1000
+    },
+    {
+        "name": "获取单个用户",
+        "method": "GET",
+        "path": "/users/1",
+        "expected_status": 200,
+        "max_response_time": 500
+    },
+    {
+        "name": "创建用户",
+        "method": "POST",
+        "path": "/users",
+        "expected_status": 201,
+        "max_response_time": 1000
+    },
+    {
+        "name": "删除不存在的用户",
+        "method": "DELETE",
+        "path": "/users/999",
+        "expected_status": 404,
+        "max_response_time": 1000
+    }
+]

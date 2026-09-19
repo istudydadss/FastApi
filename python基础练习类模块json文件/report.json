@@ -1,0 +1,30 @@
+[
+    {
+        "name": "获取用户列表",
+        "passed": true,
+        "expected_status": 200,
+        "actual_status": 200,
+        "response_time": 346
+    },
+    {
+        "name": "获取单个用户",
+        "passed": true,
+        "expected_status": 200,
+        "actual_status": 200,
+        "response_time": 222
+    },
+    {
+        "name": "创建用户",
+        "passed": true,
+        "expected_status": 201,
+        "actual_status": 201,
+        "response_time": 588
+    },
+    {
+        "name": "删除不存在的用户",
+        "passed": true,
+        "expected_status": 404,
+        "actual_status": 404,
+        "response_time": 527
+    }
+]
