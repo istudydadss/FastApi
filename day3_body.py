@@ -34,8 +34,23 @@ class Student(BaseModel):
     graduated: bool = False      # 可选,默认没毕业
 
 
-# 用一个列表先"假装"是数据库,存放创建的学生(Day4/Day5 会换成真数据库)
+
+
+class Teacher(BaseModel):
+    name: str
+    age: int
+    phone: str | None = None
+    address: str | None = None
+# 用一个列表先"假装"是数据库, 存放创建的学生(Day4/Day5 会换成真数据库)
 students_db: list[Student] = []
+
+
+
+
+# 定义一个列表存储老师的数据
+teachers_db: list[Teacher] = []
+
+
 
 
 # ---------- 第 2 步:POST 创建学生(接收请求体)----------
@@ -48,9 +63,24 @@ def create_student(student: Student):
     return {"状态": "创建成功", "收到的学生": student.name, "当前总数": len(students_db)}
 
 
+
+
+
+@app.post("/teachers")
+def create_teacher(teacher: Teacher):
+    teachers_db.append(teacher)
+    return {"状态": "创建成功", "收到的老师": teacher.name, "当前总数": len(teachers_db)}
+
+
+
+
 # ---------- 第 3 步:GET 查询所有学生 ----------
 # 人话:创建完想看看存了哪些?GET /students 一次性返回
 # 注意:路径同样是 /students,但方法不同(一个 POST 一个 GET),是两个不同的接口
 @app.get("/students")
 def list_students():
     return {"所有学生": students_db}
+
+@app.get("/teachers")
+def list_teachers():
+    return {"所有老师": teachers_db}
