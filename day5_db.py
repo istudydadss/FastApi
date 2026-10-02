@@ -32,8 +32,6 @@ class Teacher(SQLModel, table=True):        # table=True => 这个类就是数�
 
 # ---------- 3. 照上面的类定义,把表建出来(已存在就跳过)----------
 SQLModel.metadata.create_all(engine)
-
-
 app = FastAPI()
 
 
