@@ -48,6 +48,8 @@ def update_teacher(teacher_id: int, teacher: Teacher):
     return {"status": 200,"message":"老师修改成功", "更新后老师的信息": teacher_db[teacher_id]}
 
 
+
+
 # 根据id删除老师信息
 @app.delete("/teacher/{teacher_id}")
 def delete_teacher(teacher_id: int):
