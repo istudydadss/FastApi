@@ -59,11 +59,6 @@ def get_teacher(teacher_id: int):
 def list_teachers():
     with Session(engine) as s:
         return s.exec(select(Teacher)).all()
-
-@app.get("/teachers")
-def list_teachers():
-    with Session(engine) as s:
-        return s.exec(select(Teacher)).all()
 # ---------- 🏋️ 留给你仿写的作业(CRUD 补齐后两件)----------
 # PUT    /teachers/{teacher_id}:s.get 取出 → 改字段 → s.add + s.commit
 # DELETE /teachers/{teacher_id}:s.get 取出 → s.delete + s.commit

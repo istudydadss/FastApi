@@ -1,6 +1,5 @@
 # 学生成绩管理系统后端crud接口,三层架构:路由+pydantic+sqlmodel
 
-
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from sqlmodel import Session, SQLModel, create_engine, select,Field
@@ -87,6 +86,7 @@ def delete_student(id: int):
 def get_students():
     with Session(engine) as s:
         return s.exec(select(Student)).all()
+
 
 
 # 你的代码(行号)	它背后实际发给数据库的 SQL	属于
